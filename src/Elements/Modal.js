@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import Portal from "./Portal";
 import styled from "styled-components";
-import Icon from "./Utilities/Icon";
+import { Portal } from "Utilities";
+import Icon from "./Icon";
+import { Card } from "./Cards";
 
 export default class Modal extends Component {
   render() {
@@ -32,18 +33,17 @@ const ModalWrapper = styled.div`
   background: rgba(0, 0, 0, 0.7);
 `;
 
-const ModalCard = styled.div`
+const ModalCard = Card.extend`
   position: relative;
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   width: 50%;
   transition: width ease 1s;
-  background: white;
-  padding: 20px;
+
   border-radius: 2px;
   z-index: 10px;
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
+
   @media (max-width: 700px) {
     width: 90%;
   }
